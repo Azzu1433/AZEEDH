@@ -1,0 +1,45 @@
+JENKINS STEPS UBUNTU LINUX
+sudo yum update  (amazon server)
+BELOW TWO links get for www.jenkins.io website.
+ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo amazon-linux-extras install java-openjdk11
+yum install git maven jenkins -y
+systemctl restart jenkins.service
+systemctl status jenkins.service.
+
+
+
+
+pipeline {
+    agent any 
+    environment {
+        name ='devops'
+        duration='02 Months'
+        scm='git'
+        build='maven'
+    }
+    stages {
+        stage ("vars") {
+            steps {
+                sh 'echo We are Learning ${name}'
+            }
+        }
+        stage ("var01") {
+            steps {
+                sh 'echo Course Duration ${duration}'
+            }
+        }
+        stage ("var02"){
+            steps {
+                sh 'echo For SCM ${scm}'
+            }
+        }
+        stage ("var03") {
+            steps {
+                sh 'echo For Build ${build}'
+            }
+        }
+    }
+}
+

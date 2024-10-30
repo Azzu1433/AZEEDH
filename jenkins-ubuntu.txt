@@ -1,0 +1,26 @@
+REDHAT:  
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo amazon-linux-extras install epel -y
+sudo amazon-linux-extras install java-openjdk11 -y
+yum install jenkins 
+service jenkins start
+systemctl
+chkconfig jenkins on
+systemctl status jenkins   
+
+========================================================================================================
+UBUNTU: 20.04
+    1  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    2  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+    3  sudo apt update
+    4  sudo apt install jenkins
+    5  sudo apt install default-jre
+    6  sudo apt install openjdk-8-jre
+    7  system status jenkins
+    8  sudo service jenkins status
+    9  history
+
+
+
+Now : wget https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.tar.gz
